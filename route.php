@@ -1,10 +1,10 @@
 <?php
 
 require_once "config/ConfigApp.php";
-require_once "controller/productos_controller.php";
-require_once "controller/usuario_controller.php";
-require_once "controller/login_controller.php";
-require_once "controller/categorias_controller.php";
+require_once "producto/controller.php";
+require_once "usuario/controller.php";
+require_once "login/controller.php";
+require_once "categoria/controller.php";
 
 $action = $_GET["action"];
 
