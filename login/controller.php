@@ -1,6 +1,6 @@
 <?php
 
-require_once "./login/view.php";
+require_once "./view.php";
 require_once "./../usuario/model.php";
 
 class LoginController{
@@ -12,6 +12,7 @@ class LoginController{
     $this->model = new UsuarioModel();
     
   }
+
     // FUNCIONES DE LOGIN
 
   
