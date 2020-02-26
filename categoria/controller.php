@@ -47,7 +47,6 @@ class CategoriasController  extends Seguridad  {
     // BORRAR UN PRODUCTO DE LA TABLA
     public function BorrarCategoria($params){
         session_start();
-
         if (isset($_SESSION['id_usuario'])){
             session_abort();
             $usuario = $this->usrModel->GetUsuarioID($_SESSION['id_usuario']);
@@ -55,12 +54,12 @@ class CategoriasController  extends Seguridad  {
             $usuario = null;
         }
         $categoria = $this->model->GetCategorias();
-
         if ($_SESSION['admin'] == 0) {
             $error = $this->model->BorrarCategoria($params[0]);
             if ($error != '') {
                 $error = 'No se puede borrar esa categoria';
             }
+            $this->GetCategorias();
             $this->view->DisplayCategoria($categoria, $usuario, $error);
         }else{
             $this->GetCategorias();
