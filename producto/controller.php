@@ -2,7 +2,10 @@
 
 require_once "model.php";
 require_once "view.php";
-require_once "./categorias/model.php";
+require_once "./categoria/model.php";
+require_once "./Seguridad.php";
+require_once "./models/img_model.php";
+require_once "./usuario/model.php";
 
 class ProductosController extends Seguridad {
 
@@ -14,14 +17,16 @@ class ProductosController extends Seguridad {
         $this->model = new ProductosModel();
         $this->view = new ProductosView();
         $this->categorias_model = new CategoriasModel();
+        $this->ImgModel = new ImgModel();
+        $this->usrModel = new UsuarioModel();
     }
 
   
 
     //   TRAE EL ARREGLO DE PRODUCTOS DEL MODEL Y LOS MUESTRA EN EL VIEW
     public function GetProductos(){
-          session_start();
-         $img = $this->ImgModel->GetImagenes();
+        session_start();
+        $img = $this->ImgModel->GetImagenes();
         $productos = $this->model->GetProductos();
         $categorias = $this->categorias_model->GetCategorias();
           if (isset($_SESSION['id_usuario'])){

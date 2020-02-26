@@ -1,7 +1,7 @@
 <?php
 
-require_once "./view.php";
-require_once "./../usuario/model.php";
+require_once "view.php";
+require_once "./usuario/model.php";
 
 class LoginController{
   private $view;

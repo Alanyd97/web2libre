@@ -1,8 +1,8 @@
 <?php
-require_once "./categorias/model.php";
-require_once "./categorias/view.php";
+require_once "./categoria/model.php";
+require_once "./categoria/view.php";
 require_once "./usuario/model.php";
-require_once "Seguridad.php";
+require_once "./Seguridad.php";
 
 class CategoriasController  extends Seguridad  {
 
