@@ -10,11 +10,11 @@ class CategoriasController  extends Seguridad  {
     private $view;
 
 	function __construct(){
-        
         $this->model = new CategoriasModel();
         $this->view = new CategoriasView(); 
         $this->usrModel = new UsuarioModel(); 
     }
+
     // TRAE EL ARREGLO DE categoria DEL MODEL Y LOS MUESTRA EN EL VIEW
     public function GetCategorias(){
         session_start();
@@ -36,13 +36,14 @@ class CategoriasController  extends Seguridad  {
     // INSERTAR UN PRODUCTO EN LA TABLA
     public function InsertarCategoria(){
         session_start();
-        if ($_SESSION['admin'] == 0) {
+        if ($_SESSION['admin'] == 0 && $_POST['nombre'] != ''  && $_POST['descripcion'] != '') {
             session_abort();
             $this->model->InsertarCategoria($_POST['nombre'],$_POST['descripcion']);
-            header(CATEGORIAS);
         }else{
+            session_abort();
             $this->GetCategorias();
         }
+        header(CATEGORIAS);
     }
     // BORRAR UN PRODUCTO DE LA TABLA
     public function BorrarCategoria($params){
@@ -64,7 +65,6 @@ class CategoriasController  extends Seguridad  {
         }else{
             $this->GetCategorias();
         }
-        
     }
 }
 ?>
