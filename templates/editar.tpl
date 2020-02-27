@@ -15,8 +15,6 @@
               <td>{$producto->nombre}</td>
               <td>{$producto->descripcion}</td>
               <td>{$producto->precio}</td> 
-              <td><img src='{$img->src}'  height="150px" width="150px">
-              </td>
             </tr>
         </tbody>
       </table>

@@ -17,7 +17,12 @@
               <td>{$producto->nombre}</td>
               <td>{$producto->descripcion}</td>
               <td>{$producto->precio}</td> 
-              <td><img src='{$img->src}'  height="150px" width="150px">
+              <td>
+               {foreach from=$lista_img item=img}
+                      {if $img->id_producto eq $producto->id_producto}
+                      <img src='{$img->src}'  height="150px" width="150px">
+                      {/if}
+                {/foreach}
               </td>
             </tr>
         </tbody>

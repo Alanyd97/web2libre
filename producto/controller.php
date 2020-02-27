@@ -43,7 +43,7 @@ class ProductosController extends Seguridad {
     //   TRAE UN PRODUCTO DEL MODEL Y LO MUESTRA EN EL VIEW
     public function Detalle($id){
           session_start();
-          $img = $this->ImgModel->GetImagenProducto($id[0]);
+          $img = $this->ImgModel->GetImagenes();
         $productos = $this->model->GetProducto($id[0]);
           if (isset($_SESSION['id_usuario'])){
               $usuario = $this->usrModel->GetUsuarioID($_SESSION['id_usuario']);
