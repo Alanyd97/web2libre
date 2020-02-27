@@ -18,4 +18,12 @@ class CategoriasView {
         $this->smarty->assign('error',$error);
         $this->smarty->display('templates/categorias.tpl');
     }
+    public function DisplayEditar($categoria, $usuario= null){
+        $this->smarty->display('templates/top.tpl');
+        $this->smarty->assign('usuario',$usuario);
+        $this->smarty->display('templates/nav.tpl'); 
+        $this->smarty->assign('titulo',"Editar Categoria");
+        $this->smarty->assign('categoria',$categoria);
+        $this->smarty->display('templates/editar.tpl');
+    }
 }

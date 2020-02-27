@@ -12,9 +12,7 @@ class CategoriasModel {
     public function GetCategoria($id){
         $sentencia = $this->db->prepare( "SELECT * FROM categoria WHERE id_categoria=?");
         $sentencia->execute(array($id));
-        $categoria = $sentencia->fetchAll(PDO::FETCH_OBJ);
-        
-        return $categoria;
+        return $sentencia->fetch(PDO::FETCH_OBJ);
     }
     public function GetCategorias(){
         $sentencia = $this->db->prepare( "SELECT * FROM categoria");
@@ -35,12 +33,11 @@ class CategoriasModel {
             return $sentencia->errorInfo();
         }
     }
-    /*
-    public function EditarProducto($nombre,$descripcion,$precio,$id){
-        $sentencia = $this->db->prepare("UPDATE producto SET nombre = $nombre, descripcion = $descripcion, precio = $precio WHERE id_producto=?");
-        $sentencia->execute(array($nombre,$descripcion,$precio,$id));
+    public function EditarCategoria($nombre,$descripcion,$id){
+        $sentencia = $this->db->prepare("UPDATE categoria SET nombre = ?, descripcion = ? WHERE id_categoria= ?");
+        $sentencia->execute(array($nombre,$descripcion,$id));
     }
-    */
+
 
 }
 

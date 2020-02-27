@@ -28,6 +28,8 @@ class ConfigApp
       'categorias'=>'CategoriasController#GetCategorias',
       'insertarCategoria'=>'CategoriasController#InsertarCategoria',
       'borrarCategoria'=>'CategoriasController#BorrarCategoria',
+      'EditarCategoria'=>'CategoriasController#EditarCategoria',
+      'MostrarEditarCategoria'=>'CategoriasController#DisplayEditar',
       #login
       'logOut'=>'LoginController#Logout',
       'iniciarSesion'=>'LoginController#Login',

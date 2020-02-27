@@ -40,6 +40,7 @@
                     <td>{$categoria->nombre}</td>
                     <td>{$categoria->descripcion}</td>
                     <td><a href='borrarCategoria/{$categoria->id_categoria}'>Borrar</a></td>
+                    <td><a href='MostrarEditarCategoria/{$categoria->id_categoria}'>Editar</a></td>
                   </tr>
                   {/foreach}
               </tbody>
