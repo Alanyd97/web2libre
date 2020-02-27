@@ -20,14 +20,25 @@
                         Usuario
                     {/if}   
                     </td>
-                    <td><a href='borrarusuario/{$usuario->id_usuario}'>Borrar</a></td>
-                    <td><a href='tugglepermiso/{$usuario->id_usuario}/{$usuario->admin}'>
                     {if $usuario->admin eq 0}
-                        Quitar Permiso
-                    {else}
-                        Agregar Permiso
-                    {/if} 
-                    </a></td>
+                      <td>
+                            ---
+                    </td> 
+                    <td>
+                            ---
+                    </td>
+                        {else}
+                         <td>
+                            <a href='borrarusuario/{$usuario->id_usuario}'>Borrar</a>
+                        </td> 
+                        <td>
+                                <a href='tugglepermiso/{$usuario->id_usuario}/{$usuario->admin}'>Agregar permiso</a>
+                        </td>
+                    {/if}   
+                    
+
+                          
+                    <td>
                   </tr>
                   {/foreach}
               </tbody>
