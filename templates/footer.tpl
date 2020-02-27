@@ -15,7 +15,7 @@
         
     </div>
     <div class="col-12 col-lg-4 d-flex justify-content-center align-self-center">
-        <p>Copyright Electro-House © 2019 All right reserved</p>
+        <p>Copyright Novo Clothes © 2019 All right reserved</p>
     </div>
 </div>
 

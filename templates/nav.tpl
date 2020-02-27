@@ -1,9 +1,8 @@
-<nav class="navbar navbar-expand-lg">
-  <a class="navbar-brand">Electro-House</a>
+<nav class=" navbar navbar-expand-lg">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
+  <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item">
         <a class="nav-link" href="productos">Productos</a>
@@ -26,7 +25,7 @@
             <a class="nav-link" href="logOut">LogOut</a>
           </li>
            <li class="nav-item">
-            <p class="nav-link">Soy el admin!! "{$usuario->nombre}"</p>
+            <p class="nav-link">"{$usuario->nombre}"</p>
           </li>
         {elseif $usuario->admin eq 1}    
           <li class="nav-item">

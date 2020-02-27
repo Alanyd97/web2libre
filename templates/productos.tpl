@@ -2,8 +2,9 @@
 <div class="container-fluid">
   {if !isset($usuario) || $usuario eq null  || $usuario->admin == 1}
     <div class="row d-flex justify-content-center">
-          <div class="col-10 col-lg-8">
-                      
+    {foreach from=$lista_productos item=producto}
+          <div class="col-10 col-lg-8 d-flex justify-content-center">
+         {/foreach}  
               <table class="table table-dark">
                 <thead>
                   <tr>
@@ -22,8 +23,6 @@
               </table>
 
           </div>
-
-
       </div>
 
     </div>

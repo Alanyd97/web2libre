@@ -1,0 +1,6 @@
+Tabla editar sale error de foto
+problemas con js en comentarios
+usuarios en template duplicado header
+quitar permiso estando logueado siendo admin
+al añadir productos y categorias vacias	
+temas de seguridad
