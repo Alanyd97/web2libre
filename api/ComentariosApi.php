@@ -1,12 +1,12 @@
 <?php
 require_once("controllerApi.php");
-require_once("./model/comentarios_model.php");
+require_once("./models/comentarios.php");
 class ComentariosApiController extends ApiController {
     private $model;
 
     public function __construct() {
         parent::__construct();
-        $this->model = new ComentariosModel();
+        $this->model = new ComentarioModel();
     }
 
     public function getComentarios($params = []) {
