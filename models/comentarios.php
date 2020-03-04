@@ -1,13 +1,13 @@
 <?php
-class comentarioModel
+class ComentarioModel
 {
   private $db;
   function __construct(){
     $this->db = new  PDO('mysql:host=localhost;'.'dbname=comercio;charset=utf8', 'root', '');
   }
-  function AgregarComentario($puntaje, $comentario, $id_producto, $id_usuario, $admin){
-    $sentencia = $this->db->prepare("INSERT INTO comentario(puntaje, comentario, id_producto, id_usuario, admin) VALUES(?,?,?,?,?)");
-    $sentencia->execute(array($puntaje, $comentario, $id_producto, $id_usuario, $admin));
+  function AgregarComentario($id_producto, $id_usuario, $puntaje, $comentario, $admin){
+    $sentencia = $this->db->prepare("INSERT INTO comentario(id_producto, id_usuario, puntaje, comentario, admin) VALUES(?,?,?,?,?)");
+    $sentencia->execute(array( $id_producto,$id_usuario,$puntaje , $comentario, $admin));
   }
  
   function GetComentarioProducto($id_producto){

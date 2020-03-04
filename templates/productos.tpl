@@ -65,6 +65,8 @@
                       {/if}
                     {/foreach}
                     </td>
+                    <td> <td scope="col"> <a href="detalle/{$producto->id_producto}">Detalle</td>
+
                   </tr>
                   {/foreach}
               </tbody>

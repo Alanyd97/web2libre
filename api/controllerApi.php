@@ -1,7 +1,9 @@
 <?php
 
 require_once("apiView.php");
-abstract class ApiController {
+
+require_once("./Seguridad.php");
+abstract class ApiController  Extends Seguridad{
     protected $view;
     private $data;
     public function __construct() {

@@ -15,8 +15,16 @@ class ComentariosApiController extends ApiController {
     }
 
     public function AgregarComentario($params = []){
-        $comentarios = $this->getData();
-        $this->model->AgregarComentario($comentarios->puntaje, $comentarios->comentario, $comentarios->idProducto, $comentarios->idUsr,$comentarios->admin);
+        if (isset($params)){
+            session_start();
+            if (isset($_SESSION['id_usuario']) && $_SESSION['admin'] == 1){
+                $comentarios = $this->getData();
+                $this->model->AgregarComentario( $comentarios->idProducto, $comentarios->idUsr, $comentarios->puntaje, $comentarios->comentario,$comentarios->admin);
+            }else{
+                $this->view->response("No puede comentar", 404);
+            }
+            session_abort();
+        }
     }
 
 
@@ -24,12 +32,16 @@ class ComentariosApiController extends ApiController {
         $id_comentario = $params[':ID'];
         $comentario = $this->model->getComentario($id_comentario);
         if ($comentario) {
+            session_start();
+            if (isset($_SESSION['id_usuario']) && $_SESSION['admin'] == 0){
                 $this->model->BorrarComentario($id_comentario);
                 $this->view->response("Comentario eliminado", 200);
             }
-        
-        else 
+            session_abort();
+        }
+        else{
             $this->view->response("Comentario not found", 404);
+        } 
     }
 
    

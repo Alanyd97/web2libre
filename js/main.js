@@ -38,14 +38,14 @@ const app = new Vue({
             }
         },
         async postComentario() {  
-           try {
-                 let promesa = await fetch(this.url, {
+            try {
+                let promesa = await fetch(this.url, {
                     method: 'POST',
                     headers: {'Content-Type': 'application/json'},       
-                     body: JSON.stringify(this.comentario)
-                 });
-                 if (promesa.ok){
-                    
+                    body: JSON.stringify(this.comentario)
+                });
+                if (promesa.ok){
+                        console.log(this.comentario);
                         this.getComentario();
                  }
              } catch (error) {

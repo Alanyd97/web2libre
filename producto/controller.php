@@ -56,7 +56,7 @@ class ProductosController extends Seguridad {
     public function InsertarProducto(){
         session_start();
         if ($_SESSION['admin'] == 0 && $_POST['nombre'] != '' && $_POST['descripcion'] != '' && $_POST['precio']!='') {
-            session_abort();
+            
             $this->model->InsertarProducto($_POST['nombre'],$_POST['descripcion'],$_POST['precio'],$_POST['categoria']);
             if (($_POST['nombre'] != '') && ($_POST['descripcion']!= '') && ($_POST['precio']!= '') && ($_POST['categoria']!= '')){
                 if ($_FILES['imagenes']['name'] != ''){
@@ -68,6 +68,7 @@ class ProductosController extends Seguridad {
                 }
             }
         }
+        session_abort();
         header(PRODUCTOS);
     }
 
